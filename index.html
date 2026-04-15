@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Meeting Minutes </title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Justine Le">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+        <h1>16DOF Robotic Arm</h1>
+        <h2>Meeting Minutes</h2>
+        
+        <nav>
+            <a href="#attendence">Attendence</a> |
+            <a href="#agenda">Agenda</a> |
+            <a href="#unfinished">Unfinished Business</a> |
+            <a href="#new-business">New Business</a> |
+            <a href="#diagrams">Diagrams</a> |
+            <a href="#recordings">Recordings</a> |
+            <a href="#misc">Misc</a> 
+            <a href="form">Form</a>
+        </nav>
+
+        <hr>
+
+         <p><b>Topic:</b> Revision of 1st Draft  &nbsp;&nbsp; <b>Date:</b> February 20, 2026 &nbsp;&nbsp; <b>Time:</b> 10:00 AM - 11:00 AM PST</p>
+         <p><b>Location:</b> Zoom &nbsp;&nbsp; <b>Scribe:</b> Judy Hopper</p>
+    </header>
+
+    <main>
+        <section id="attendance">
+            <h2>Attendence</h2>
+            <hr>
+
+            <ul>
+                <li>Tommy Lee: Product Manager</li>
+                <li>Sammatha Lodwig: Tech Lead</li>
+                <li>Victoria Wu: Design Lead</li>
+                <li>Robert Smith: Backend Engineer</li>
+                <li>Lily Todds: Frontend Engineer</li>
+            </ul>
+        </section>
+       
+        <section id="agenda">
+            <h2>Agenda</h2>
+            <hr>
+
+            <ol>
+                <li>Identify instability, singularities, or unexpected joint behaviors</li>
+                <li>Assess motor/servo performance (torque, precision, overheating issues)</li>
+                <li>Review control algorithms (PID tuning, AI/ML enhancements)</li>
+            </ol>
+        </section>
+
+        <section id="unfinished">
+            <h2>Unfinished Business</h2>
+            <hr>
+            <p>The following items were carried over from last meeting and still need to be resolved:</p>
+
+            <ul>
+                <li>
+                    <strong>Inverse Kinematics Optimization:</strong> Current IK solution still has convergence issues in edge configurations
+                </li>
+                <li>
+                    <strong>PID / Control Tuning Not Finalized:</strong> Some joints still exhibit oscillation or slow response
+                </li>
+                <li>
+                    <strong>Sensor Calibration & Feedback Reliability:</strong> Calibration procedure not yet standardized or automated
+                </li>
+            </ul>
+        </section>
+
+        <section id="new-business">
+            <h2>New Business</h2>
+            <hr>
+            <p>The following topics are new items brought up today:</p>
+
+            <ul>
+                <li>Consider null-space optimization techniques for secondary objectives</li>
+                <li>Propose new gripper designs (<i>e.g.</i>, multi-fingered, soft robotics, tool-changing systems)</li>
+                <li>Integrate dynamic obstacle detection (<em>vision or LiDAR-based</em>)</li>
+            </ul>
+        </section>
+
+        <section id="diagram">
+            <h2>Diagrams</h2>
+            <hr>
+
+            <p>Photos and screenshots captured during the meeting:</p>
+
+            <div>
+                <img 
+                    src="https://i.all3dp.com/workers/images/fit=scale-down,w=1200,quality=79,gravity=0.5x0.5,format=auto/wp-content/uploads/2018/07/26142435/a-typical-6dof-arm-with-labeled-axes-denso-robotics-180702.png"
+                    alt="Diagram of 16DOF robotic arm"
+                    width="300"
+                >
+                
+                <p>
+                    <span>Figure 1: 1st Design of 16DOF Robotic Arm</span>
+                </p>
+            </div>
+
+            <hr>
+
+            <details>
+                <summary>View other architecture designs (click to expand) </summary>
+                <img 
+                    src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-025-34643-7/MediaObjects/41598_2025_34643_Fig1_HTML.png"
+                    alt="Diagram of Predictive Algorithm 16DOF robotic arm"
+                    width="300"
+                >
+                
+                <p>
+                    <span>Figure 2: Predictive Algorithm Design</span>
+                </p>
+            </details>
+        </section>
+
+        <section id="recordings">
+            <h2>Recordings</h2>
+            <hr>
+
+            <h3>Video Recording</h3>
+            <p>Zoom recording of meetings:</p>
+
+            <video controls width="640">
+                <source src="cse101_Lab 2.mp4" type="video/mp4">
+            </video>
+
+            <hr>
+
+            <h3>Audio Recording</h3>
+            <p>The audio of the of the Zoom meeting:</p>
+
+            <audio controls>
+                <source src="cse101_audio.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section id="misc">
+            <h2>Comments, Questions, Concerns</h2>
+            <hr>
+
+            <details>
+                <summary>Barry Allen</summary>
+                <p>Hardware integration is progressing well, but small inconsistencies between joints remain</p>
+            </details>
+
+            <details>
+                <summary>Rusty Tomato</summary>
+                <p>What is the acceptable error tolerance for end-effector positioning in our target applications?</p>
+            </details>
+
+            <details>
+                <summary>Jackie Chan</summary>
+                <p>Sensor noise or drift could compound across multiple joints, reducing overall accuracy</p>
+            </details>
+        </section>
+
+        <section id="forms">
+            <h2>Post-Meeting Feedback Form</h2>
+            <hr>
+
+            <p>Please complete this form after the meeting.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="full-name">Full name:</label>
+                    <br>
+                    <input type="text" id="full-name" name="full-name">
+                    <br><br>
+
+                    <label for="meeting-date">Meeting date:</label>
+                    <br>
+                    <input type="date" id="meeting-date" name="meeting-date">
+                    <br><br>
+
+                    <label for="role">Role (start typing to see suggestions):</label>
+                    <br>
+                    <input type="text" id="role" name="role" list="tool-options" placeholder="e.g. Design">
+                    <datalist id="tool-options">
+                        <option value="Product Management">
+                        <option value="Frontend Engineer">
+                        <option value="Backend Engineer">
+                        <option value="Design">
+                        <option value="Other">
+                    </datalist>
+                    <br><br>
+
+                    <label for="team">Team / department:</label>
+                    <br>
+                    <select id="team" name="team">
+                        <option value="">-- Select your team --</option>
+                        <option value="software">Software</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="controsl">Controls</option>
+                        <option value="systems integration">Systems Integration</option>
+                        <option value="managment">Managment</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br><br>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Meeting Rating</legend>
+
+                    <p>How would you rate this meeting?</p>
+
+                    <label><input type="radio" name="rating" value="excellent"> Excellent</label><br>
+                    <label><input type="radio" name="rating" value="good"> Good</label><br>
+                    <label><input type="radio" name="rating" value="fair"> Fair</label><br>
+                    <label><input type="radio" name="rating" value="poor"> Poor</label>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Additional Comments</legend>
+                    <label for="comments">Any other thoughts or suggestions?</label>
+                    <br>
+                    <textarea id="comments" name="comments" rows="5" cols="50" placeholder="Write your comments here..."></textarea>
+                    </fieldset>
+
+                    <br>
+
+                    <button type="submit">Submit Feedback</button>
+
+                    <button type="reset">Clear Form</button>
+                </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+    <hr>
+    <p>
+      Minutes recorded by Justine Le.
+      &copy; 2026 16DOF Robotic Arm Team.
+    </p>
+  </footer>
+    
+</body>
+</html>
