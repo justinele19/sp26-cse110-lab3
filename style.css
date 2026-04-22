@@ -178,7 +178,7 @@ nav {
   justify-content: center;  
   align-items: center;      
   gap: 0.4rem;
-  margin: 1rem 0 1.4rem 0;
+  margin: 1rem 0 1.4rem 0; 
 }
 
 nav a {
@@ -413,7 +413,7 @@ details p {
 /* =============================================
    DIAGRAM SECTION — Nested selectors
    ============================================= */
-#diagrams {
+#diagram {
   & div {
     margin-top: 1rem;
     text-align: center;
