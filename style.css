@@ -1,0 +1,726 @@
+/* =============================================
+   Meeting Minutes — styles.css
+   ============================================= */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+/* =============================================
+   CSS VARIABLES & FALLBACKS
+   ============================================= */
+:root {
+  --purple-light:   #e8e0f5;
+  --purple-mid:     #c4b0e8;
+  --purple-accent:  #9b7fd4;
+  --purple-deep:    #6a4faa;
+  --silver-light:   #f4f4f6;
+  --silver-mid:     #d8d8e0;
+  --silver-dark:    #a0a0b0;
+  --white:          #ffffff;
+  --text-dark:      #2a2535;
+  --text-mid:       #4a4560;
+  --text-light:     #7a758f;
+  --radius:         10px;
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'Source Sans 3', Helvetica, sans-serif;
+
+
+  --wide-purple: color(display-p3 0.42 0.31 0.67);
+  --mixed-purple: color-mix(in srgb, #9b7fd4 60%, white 40%);
+}
+
+/* =============================================
+   UNIVERSAL SELECTOR (*)
+   ============================================= */
+* {
+  box-sizing: border-box;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* =============================================
+   ELEMENT SELECTORS — base styles
+   ============================================= */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;          
+}
+
+body {
+  font-family: var(--font-body, 'Source Sans 3', sans-serif); 
+  font-size: 1rem;          
+  line-height: 1.75;       
+  color: var(--text-dark, #2a2535);
+  background-color: hsl(255, 30%, 97%);  
+  background-image:
+    radial-gradient(ellipse at 10% 0%, var(--purple-light) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 100%, #ddd6f3 0%, transparent 50%);
+  min-height: 100vh;        
+}
+
+/* Selector list: h1, h2, h3 share font */
+h1, h2, h3 {
+  font-family: var(--font-display, Georgia, serif);
+  color: var(--purple-deep, #6a4faa);
+}
+
+h1 { font-size: 2.4rem; letter-spacing: 0.02em; }  
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.05rem; font-family: var(--font-body); }
+
+p {
+  color: var(--text-mid, #4a4560);
+  margin: 0 0 0.6rem 0;
+}
+
+a {
+  color: var(--purple-accent, #9b7fd4);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--purple-deep);
+}
+
+a:active {
+  color: var(--purple-mid);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+
+  border: 2px solid var(--silver-mid);
+  border-radius: var(--radius);
+}
+
+ul {
+  list-style: none;
+  padding: 0; 
+}
+
+ol {
+  list-style: none;
+  counter-reset: ol-counter;
+  padding: 0;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+header {
+  background-color: var(--purple-deep);
+  background-image: linear-gradient(135deg, #6a4faa 0%, #9b7fd4 60%, #c4b0e8 100%);
+  color: white;             
+  padding: 2.5rem 2rem 2rem 2rem; 
+  text-align: center;
+  position: relative;       
+  overflow: hidden;
+}
+
+/* Descendant combinator: header h1 */
+header h1 {
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.2rem;
+}
+
+/* Child combinator: header > h2 */
+header > h2 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88); /* rgba() */
+  margin-bottom: 1.4rem;
+}
+
+header b { color: var(--purple-light); }
+
+header hr {
+  border-style: solid;      
+  border-color: rgba(255,255,255,0.25); 
+  border-width: 1px;        
+  border-radius: 2px;       
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;        
+  margin-right: auto;
+}
+
+/* Decorative circle */
+header::before {
+  content: '';
+  position: absolute;       
+  top: -40px;
+  right: -40px;
+  width: 200px;             
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* =============================================
+   NAV BAR
+   ============================================= */
+nav {
+  display: flex;            
+  flex-wrap: wrap;         
+  justify-content: center;  
+  align-items: center;      
+  gap: 0.4rem;
+  margin: 1rem 0 1.4rem 0;
+}
+
+nav a {
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 1px;
+  display: inline-block;    
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+nav a:hover  { background-color: rgba(255,255,255,0.25); transform: translateY(-1px); }
+nav a:active { transform: translateY(0); }
+
+/* =============================================
+   .meeting-meta
+   ============================================= */
+.meeting-meta {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding-top: 0.6rem;      
+  padding-bottom: 0.6rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  border-style: solid;
+  border-color: rgba(255,255,255,0.25);
+  border-width: 1px;
+}
+
+/* =============================================
+   MAIN 
+   ============================================= */
+main {
+  display: grid;                      
+  grid-template-columns: 1fr;         
+  grid-template-rows: auto;          
+  gap: 2rem;                          
+  max-width: 860px;                   
+  min-width: 280px;                   
+  margin: 2.5rem auto 3rem auto;      
+  padding: 0 1.5rem;
+}
+
+/* =============================================
+   SECTIONS
+   ============================================= */
+section {
+  background-color: var(--white, #ffffff);
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;               
+  border: 1px solid var(--silver-mid); 
+  box-shadow: 0 2px 12px rgba(107, 79, 170, 0.10);
+  transition: box-shadow 0.2s;
+  width: 100%;                        
+  height: auto;                       
+}
+
+section:hover { box-shadow: 0 6px 24px rgba(107, 79, 170, 0.18); }
+
+/* Descendant combinator: section h2 */
+section h2 {
+  color: var(--purple-deep);
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Child combinator: section > hr */
+section > hr {
+  border-style: solid;
+  border-color: var(--purple-light);
+  border-width: 2px 0 0 0;
+  margin-bottom: 1.2rem;
+}
+
+/* ID selectors */
+#attendance { border-left: 4px solid var(--purple-accent); }
+#agenda     { border-left: 4px solid var(--mixed-purple); }  /* color-mix variable */
+#unfinished { border-left: 4px solid var(--silver-dark); }
+#forms h2   { border-left: 4px solid var(--purple-accent); padding-left: 0.75rem; }
+
+/* :has() — section containing a <details> gets tinted background */
+section:has(details) {
+  background-color: color-mix(in srgb, var(--white) 96%, var(--purple-light) 4%);
+}
+
+/* :has() — fieldset containing a textarea gets extra bottom padding */
+fieldset:has(textarea) {
+  padding-bottom: 1.8rem;
+}
+
+/* =============================================
+   LISTS
+   ============================================= */
+ul li {
+  margin: 0 0 0.5rem 0.3rem;
+  color: var(--text-mid);
+}
+
+ul li::before {
+  content: '◆';
+  color: var(--purple-accent);
+  font-size: 0.6rem;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+ol li {
+  counter-increment: ol-counter;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+ol li::before {
+  content: counter(ol-counter);
+  min-width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  background-color: var(--purple-accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+li strong { color: var(--purple-deep); }
+
+/* General sibling combinator: li ~ li */
+li ~ li {
+  border-top: 1px solid transparent;
+}
+
+/* Adjacent sibling combinator: h2 + hr */
+h2 + hr {
+  border-color: var(--purple-light);
+  border-width: 2px 0 0 0;
+  border-style: solid;
+}
+
+/* Zebra-stripe attendance — #id + element + pseudo-class */
+#attendance li:nth-child(even) {
+  background-color: #f4f0fc;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+}
+
+/* Adjacent sibling in attendance list */
+#attendance li + li {
+  border-top: 1px solid var(--purple-light);
+  padding-top: 0.3rem;
+}
+
+/* =============================================
+   DETAILS / SUMMARY
+   ============================================= */
+details {
+  border-style: solid;
+  border-color: var(--silver-mid);
+  border-width: 1px;
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background-color: var(--silver-light);
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+details img {
+  margin-left: auto;    /* ← add this new rule */
+  margin-right: auto;
+}
+
+/* Attribute selector: details[open] */
+details[open] {
+  background-color: var(--purple-light);
+  border-color: var(--purple-mid);
+}
+
+/* Child combinator inside attribute selector */
+details[open] > summary { color: var(--purple-deep); }
+
+summary {
+  font-weight: 600;
+  color: var(--purple-deep);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.97rem;
+}
+
+summary::before {
+  content: '▸';
+  color: var(--purple-accent);
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+details[open] summary::before { transform: rotate(90deg); }
+
+/* Descendant combinator: details p */
+details p {
+  margin-top: 0.7rem;
+  font-size: 0.93rem;
+  color: var(--text-mid);
+  align-items: center;
+  padding-left: 1.2rem;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  font-style: italic;
+  
+}
+
+/* =============================================
+   DIAGRAM SECTION — Nested selectors
+   ============================================= */
+#diagram {
+  & div {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  & div img {
+    margin-left: auto;   /*  centers the image  */
+    margin-right: auto;
+  }
+
+  & div > p span {
+    font-size: 0.83rem;
+    color: var(--text-light);
+    display: block;           
+    margin-top: 0.4rem;
+    font-style: italic;
+    text-align: center;       
+    text-decoration: none;   
+  }
+}
+
+/* =============================================
+   VIDEO & AUDIO — selector list
+   ============================================= */
+video, audio {
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--radius);
+  border: 1px solid var(--silver-mid);
+  margin-top: 0.5rem;
+  background-color: var(--silver-light);
+  display: block;
+}
+
+/* =============================================
+   FORM
+   ============================================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+fieldset {
+  border-style: solid;
+  border-color: var(--purple-mid);
+  border-width: 1.5px;
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  background-color: var(--silver-light);
+  margin-bottom: 1.2rem;
+}
+
+legend {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--purple-deep);
+  padding: 0 0.6rem;
+  background-color: var(--white);
+  border-radius: 4px;
+  border: 1px solid var(--purple-mid);
+}
+
+label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+/* Attribute selector: input[type=text] */
+input[type=text],
+input[type=date] {
+  width: 100%;
+  max-width: 380px;
+  padding: 0.5rem 0.75rem;
+  border-style: solid;
+  border-color: var(--silver-mid);
+  border-width: 1.5px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  display: block;
+}
+
+input[type=text]:hover,
+input[type=date]:hover { border-color: var(--purple-mid); }
+
+input[type=text]:focus,
+input[type=date]:focus {
+  border-color: var(--purple-accent);
+  box-shadow: 0 0 0 3px rgba(155, 127, 212, 0.18);
+}
+
+/* Attribute selector: input[type=checkbox] and input[type=radio] */
+input[type=checkbox],
+input[type=radio] {
+  accent-color: var(--purple-accent);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  margin-top: 0;
+  margin-right: 0.4rem;
+  margin-bottom: 0;
+  margin-left: 0;
+  vertical-align: middle;
+  display: inline-block;   
+}
+
+select {
+  width: 100%;
+  max-width: 380px;
+  padding: 0.5rem 0.75rem;
+  border-style: solid;
+  border-color: var(--silver-mid);
+  border-width: 1.5px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  cursor: pointer;
+  outline: none;
+  display: block;
+}
+
+select:focus {
+  border-color: var(--purple-accent);
+  box-shadow: 0 0 0 3px rgba(155, 127, 212, 0.18);
+}
+
+textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.6rem 0.8rem;
+  border-style: solid;
+  border-color: var(--silver-mid);
+  border-width: 1.5px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  resize: vertical;
+  outline: none;
+  display: block;
+}
+
+textarea:focus {
+  border-color: var(--purple-accent);
+  box-shadow: 0 0 0 3px rgba(155, 127, 212, 0.18);
+}
+
+/* =============================================
+   BUTTONS — Combining two selectors: element[attr]
+   ============================================= */
+button[type=submit] {
+  padding: 0.65rem 2rem;
+  background-image: linear-gradient(135deg, var(--purple-deep), var(--purple-accent));
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-style: none;
+  border-color: transparent;
+  border-width: 1.5px;
+  border-radius: 25px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 14px hsla(270, 50%, 47%, 0.3); 
+  transition: transform 0.15s, box-shadow 0.2s;
+  margin-bottom: .8rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;           
+}
+
+button[type=submit]:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px hsla(270, 50%, 47%, 0.4); }
+button[type=submit]:active { transform: translateY(0px); }
+
+button[type=reset] {
+  padding: 0.65rem 2rem;
+  background-color: var(--white);
+  color: var(--purple-deep);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-style: solid;
+  border-color: var(--purple-mid);
+  border-width: 1.5px;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+button[type=reset]:hover  { background-color: var(--purple-light); transform: translateY(-1px); }
+button[type=reset]:active { transform: translateY(0); }
+
+/* =============================================
+   .back-to-top — position: fixed
+   ============================================= */
+.back-to-top {
+  position: fixed;          
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--purple-accent);
+  color: white;
+  border-style: none;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: 50%;
+  width: 2.75rem;           
+  height: 2.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(107,79,170,0.3);
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.back-to-top:hover  { background-color: var(--purple-deep); transform: translateY(-2px); }
+.back-to-top:active { transform: translateY(0); }
+
+/* =============================================
+   Sticky bar (for mobile device)
+   ============================================= */
+.sticky-bar {
+  position: sticky;         
+  top: 0;
+  z-index: 100;
+  background-color: var(--purple-deep);
+  padding: 0.5rem 1rem;
+  display: none;            
+  text-align: center;
+  font-size: 0.82rem;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem 1rem;
+  color: var(--text-light);
+  font-size: 0.88rem;
+  position: static;         /* position: static */
+}
+
+footer hr {
+  border-style: solid;
+  border-color: var(--silver-mid);
+  border-width: 1px 0 0 0;
+  margin: 0 auto 1rem auto;
+  max-width: 860px;
+}
+
+/* =============================================
+   MEDIA QUERIES — Responsiveness
+   ============================================= */
+
+@media (max-width: 700px) {
+  header h1  { font-size: 1.8rem; }
+
+  main {
+    padding: 0 1rem 2rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  section { padding: 1.2rem 1.1rem; }
+
+  nav a {
+    font-size: 0.78rem;
+    padding: 0.28rem 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1  { font-size: 1.4rem; }
+  header > h2 { font-size: 0.9rem; }
+  h2          { font-size: 1.2rem; }
+
+  .sticky-bar { display: block; } 
+
+  button[type=submit],
+  button[type=reset] {
+    width: 100%;
+    margin-bottom: 0.6rem;
+    margin-right: 0;
+  }
+
+  input[type=text],
+  input[type=date],
+  select { max-width: 100%; }
+}
+
+@media (min-width: 1100px) {
+  main { max-width: 960px; }
+}
