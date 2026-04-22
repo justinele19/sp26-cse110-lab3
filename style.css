@@ -413,7 +413,7 @@ details p {
 /* =============================================
    DIAGRAM SECTION — Nested selectors
    ============================================= */
-#diagram {
+#diagrams {
   & div {
     margin-top: 1rem;
     text-align: center;
